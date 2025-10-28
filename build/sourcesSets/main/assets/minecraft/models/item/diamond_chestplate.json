@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": { "layer0": "item/diamond_chestplate" },
+  "overrides": [
+    { "predicate": { "custom_model_data": 1002 },
+      "model": "ghostcraft:armor/ghost_chest" }
+  ]
+}

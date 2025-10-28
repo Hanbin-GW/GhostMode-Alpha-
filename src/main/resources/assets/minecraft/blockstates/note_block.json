@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "instrument=bit,note=5": {
+      "model": "modetutorial:block/etv"
+    }
+  }
+}

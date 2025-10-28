@@ -1,0 +1,149 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 32],
+	"textures": {
+		"0": "./gemplate"
+	},
+	"elements": [
+		{
+			"name": "body",
+			"from": [3.25, 11.25, 5.25],
+			"to": [12.75, 24.75, 10.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [5, 10, 7, 16], "texture": "#0"},
+				"east": {"uv": [4, 10, 5, 16], "texture": "#0"},
+				"south": {"uv": [8, 10, 10, 16], "texture": "#0"},
+				"west": {"uv": [7, 10, 8, 16], "texture": "#0"},
+				"up": {"uv": [7, 10, 5, 8], "texture": "#0"},
+				"down": {"uv": [9, 8, 7, 10], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6, 18, 4],
+			"to": [10, 22, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 19, 4]},
+			"faces": {
+				"north": {"uv": [13.75, 0.5, 14.75, 2.5], "texture": "#0"},
+				"east": {"uv": [13.5, 0.5, 13.75, 2.5], "texture": "#0"},
+				"south": {"uv": [15, 0.5, 16, 2.5], "texture": "#0"},
+				"west": {"uv": [14.75, 0.5, 15, 2.5], "texture": "#0"},
+				"up": {"uv": [14.75, 0.5, 13.75, 0], "texture": "#0"},
+				"down": {"uv": [15.75, 0, 14.75, 0.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "left_arm",
+			"from": [-0.75, 11.25, 5.25],
+			"to": [4.75, 24.75, 10.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [12, 10, 11, 16], "texture": "#0"},
+				"east": {"uv": [13, 10, 12, 16], "texture": "#0"},
+				"south": {"uv": [14, 10, 13, 16], "texture": "#0"},
+				"west": {"uv": [11, 10, 10, 16], "texture": "#0"},
+				"up": {"uv": [11, 10, 12, 8], "texture": "#0"},
+				"down": {"uv": [12, 8, 13, 10], "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 22, 4],
+			"to": [3, 24, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 22, 4]},
+			"faces": {
+				"north": {"uv": [12, 0.5, 12.5, 1.5], "texture": "#0"},
+				"east": {"uv": [11.75, 0.5, 12, 1.5], "texture": "#0"},
+				"south": {"uv": [12.75, 0.5, 13.25, 1.5], "texture": "#0"},
+				"west": {"uv": [12.5, 0.5, 12.75, 1.5], "texture": "#0"},
+				"up": {"uv": [12.5, 0.5, 12, 0], "texture": "#0"},
+				"down": {"uv": [13, 0, 12.5, 0.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "right_arm",
+			"from": [11.25, 11.25, 5.25],
+			"to": [16.75, 24.75, 10.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [11, 10, 12, 16], "texture": "#0"},
+				"east": {"uv": [10, 10, 11, 16], "texture": "#0"},
+				"south": {"uv": [13, 10, 14, 16], "texture": "#0"},
+				"west": {"uv": [12, 10, 13, 16], "texture": "#0"},
+				"up": {"uv": [12, 10, 11, 8], "texture": "#0"},
+				"down": {"uv": [13, 8, 12, 10], "texture": "#0"}
+			}
+		},
+		{
+			"from": [13, 22, 4],
+			"to": [15, 24, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14, 22, 4]},
+			"faces": {
+				"north": {"uv": [10.25, 0.5, 10.75, 1.5], "texture": "#0"},
+				"east": {"uv": [10, 0.5, 10.25, 1.5], "texture": "#0"},
+				"south": {"uv": [11, 0.5, 11.5, 1.5], "texture": "#0"},
+				"west": {"uv": [10.75, 0.5, 11, 1.5], "texture": "#0"},
+				"up": {"uv": [10.75, 0.5, 10.25, 0], "texture": "#0"},
+				"down": {"uv": [11.25, 0, 10.75, 0.5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [50.75, 45, 0],
+			"translation": [0, -0.25, -1.75],
+			"scale": [0.375, 0.375, 0]
+		},
+		"gui": {
+			"rotation": [-180, 0, -180],
+			"translation": [0, -11.25, 0]
+		},
+		"fixed": {
+			"translation": [0, -10.25, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "body",
+			"origin": [8, 24, 8],
+			"color": 0,
+			"children": [
+				0,
+				{
+					"name": "core",
+					"origin": [8, 24, 8],
+					"color": 0,
+					"children": [1]
+				}
+			]
+		},
+		{
+			"name": "left_arm",
+			"origin": [3, 22, 8],
+			"color": 0,
+			"children": [
+				2,
+				{
+					"name": "semicore",
+					"origin": [3, 22, 8],
+					"color": 0,
+					"children": [3]
+				}
+			]
+		},
+		{
+			"name": "right_arm",
+			"origin": [13, 22, 8],
+			"color": 0,
+			"children": [
+				4,
+				{
+					"name": "semicore2",
+					"origin": [13, 22, 8],
+					"color": 0,
+					"children": [5]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+  "drilling": { 
+    "subtitle": "subtitles.modetutorial.drilling",
+    "sounds": [
+      "modetutorial:effects/drill"
+    ]
+  }
+}
