@@ -18,7 +18,7 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -27,7 +27,11 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.ghost.modetutorial.customitem.ModEntities;
+import org.ghost.modetutorial.customitem.ModItems;
 import org.slf4j.Logger;
+import org.ghost.modetutorial.customitem.grenade.client.GrenadeRenderer;
+import net.minecraftforge.fml.ModLoadingContext;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Modetutorial.MODID)
@@ -54,6 +58,7 @@ public class Modetutorial {
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().alwaysEdible().nutrition(1).saturationModifier(2f).build())));
     public static final RegistryObject<Block> Etv = BLOCKS.register("etv", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)));
     public static final RegistryObject<Item> EtvBlockItem = ITEMS.register("etv",()->new BlockItem(Etv.get(), new Item.Properties()));
+    public static final RegistryObject<Item> GrenadeItem = ITEMS.register("grenade", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().alwaysEdible().nutrition(1).saturationModifier(2f).build())));
 
     // Creates a creative tab with the id "modetutorial:example_tab" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder().withTabsBefore(CreativeModeTabs.COMBAT).icon(() -> EXAMPLE_ITEM.get().getDefaultInstance()).displayItems((parameters, output) -> {
@@ -62,6 +67,8 @@ public class Modetutorial {
     }).build());
 
     public Modetutorial(FMLJavaModLoadingContext context) {
+        System.out.println("[DEBUG] Registered Items: " + ModItems.GRENADE.isPresent());
+
         IEventBus modEventBus = context.getModEventBus();
 
         // Register the commonSetup method for modloading
@@ -82,6 +89,9 @@ public class Modetutorial {
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        //ModItems.ITEMS.register(modEventBus);
+        ModEntities.ENTITIES.register(modEventBus);
+        //EntityRenderers.register(ModEntities.GRENADE.get(), GrenadeRenderer::new);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
