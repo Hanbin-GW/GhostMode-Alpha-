@@ -58,11 +58,13 @@ public class Modetutorial {
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().alwaysEdible().nutrition(1).saturationModifier(2f).build())));
     public static final RegistryObject<Block> Etv = BLOCKS.register("etv", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)));
     public static final RegistryObject<Item> EtvBlockItem = ITEMS.register("etv",()->new BlockItem(Etv.get(), new Item.Properties()));
-    public static final RegistryObject<Item> GrenadeItem = ITEMS.register("grenade", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().alwaysEdible().nutrition(1).saturationModifier(2f).build())));
+    public static final RegistryObject<Item> GrenadeItem = ITEMS.register("grenade", () -> new org.ghost.modetutorial.customitem.grenade.GrenadeItem(new Item.Properties().stacksTo(16)));
+
 
     // Creates a creative tab with the id "modetutorial:example_tab" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder().withTabsBefore(CreativeModeTabs.COMBAT).icon(() -> EXAMPLE_ITEM.get().getDefaultInstance()).displayItems((parameters, output) -> {
         output.accept(Etv.get());
+        output.accept(GrenadeItem.get());
         output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
     }).build());
 
