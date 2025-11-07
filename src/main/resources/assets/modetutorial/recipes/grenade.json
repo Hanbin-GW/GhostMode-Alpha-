@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    " T ",
+    " C "
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "T": { "item": "minecraft:tnt" },
+    "C": { "item": "minecraft:cobblestone" }
+  },
+  "result": {
+    "item": "modetutorial:grenade",
+    "count": 1
+  }
+}
