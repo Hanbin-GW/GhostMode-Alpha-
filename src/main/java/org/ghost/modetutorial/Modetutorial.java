@@ -29,6 +29,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.ghost.modetutorial.customitem.ModEntities;
 import org.ghost.modetutorial.customitem.ModItems;
+import org.ghost.modetutorial.recipe.ModRecipes;
 import org.slf4j.Logger;
 import org.ghost.modetutorial.customitem.grenade.client.GrenadeRenderer;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -93,6 +94,8 @@ public class Modetutorial {
         //ModItems.ITEMS.register(modEventBus);
         ModEntities.ENTITIES.register(modEventBus);
         //EntityRenderers.register(ModEntities.GRENADE.get(), GrenadeRenderer::new);
+
+        ModRecipes.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
